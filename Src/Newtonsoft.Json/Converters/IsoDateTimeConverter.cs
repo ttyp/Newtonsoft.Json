@@ -39,6 +39,23 @@ namespace Newtonsoft.Json.Converters
         private DateTimeStyles _dateTimeStyles = DateTimeStyles.RoundtripKind;
         private string _dateTimeFormat;
         private CultureInfo _culture;
+        
+        /// <summary>
+        /// default 
+        /// </summary>
+        public IsoDateTimeConverter()
+        {
+        }
+
+        /// <summary>
+        /// for converter to set DateTimeFormat param directly
+        /// example:[JsonConverter(typeof(IsoDateTimeConverter),"yyyy-MM-dd HH:mm:ss")]
+        /// </summary>
+        /// <param name="DateTimeFormat"></param>
+        public IsoDateTimeConverter(string DateTimeFormat)
+        {
+            this.DateTimeFormat = DateTimeFormat;
+        }
 
         /// <summary>
         /// Gets or sets the date time styles used when converting a date to and from JSON.
